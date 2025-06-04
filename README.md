@@ -1,5 +1,5 @@
 
-[![CircleCI](https://circleci.com/gh/MissiaL/hikvision-client.svg?style=svg)](https://circleci.com/gh/MissiaL/hikvision-client)
+[![CI](https://github.com/MissiaL/hikvision-client/actions/workflows/ci.yml/badge.svg)](https://github.com/MissiaL/hikvision-client/actions/workflows/ci.yml)
 
 
 # Python Library for Hikvision Cameras
@@ -160,12 +160,8 @@ with open('screen.jpg', 'wb') as f:
 
 
 ```bash
-pipenv install --dev
-pipenv run pytest
-pipenv run pytest --cov-report html --cov hikvisionapi # to get coverage report in ./htmlcov/
-
-# or you can get into the virtual env with:
-pipenv shell
-pytest
+python -m pip install -r requirements.txt -r requirements-dev.txt
+pre-commit run --all-files
+pytest --cov-report html --cov hikvisionapi
 ```
 
